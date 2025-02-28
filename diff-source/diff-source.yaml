@@ -8,9 +8,12 @@ spec:
     namespace: default
     server: 'https://kubernetes.default.svc'
   source:
-    path: guestbook
+    path: helm-guestbook
     repoURL: 'https://github.com/argoproj/argocd-example-apps.git'
     targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values.yaml
   project: default
   syncPolicy:
     automated:
